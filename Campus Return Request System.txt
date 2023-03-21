@@ -1,0 +1,64 @@
+Using linked list data structure, design a CRR (Campus Return Requests)
+system for students who want to return to the campus. Each node of list named
+REQUEST should hold the name of the student (First_Name, Last_Name), roll
+number and unique ID based on order in which request was placed (for example 5
+for request placed on Friday being the 5th day of the week). Out of these, the
+requests of only first N students would be granted/accommodated on the actual
+CONFIRMED list. The rest would be put on a WAITLIST. If any student wants
+to cancel his/her request, the corresponding node will be deleted from all the lists.
+New names would be added from WAITLIST to CONFIRMED list in case there
+is a vacancy and the corresponding node will be shifted from the WAITLIST.
+Requests will be made only from Monday till Saturday. It is guaranteed that only
+one person does booking on a particular day. Also it is guaranteed that all names
+will be unique and there will be no duplicates.
+
+Implement the following methods in your program:
+
+1: will be followed by name of the student, roll number of the student and day of booking.
+Include the student on REQUEST list
+2: will be followed by name of the student. Cancel the request for the student
+3: Print REQUEST list
+4: Print CONFIRMED list
+8: Print WAITLIST list
+
+The data for the program would be read from file CRR.txt. The first line would contain N.
+The remaining lines will start with operation code and followed by relevant data wherever
+needed. For request, it would be name of the student followed by weekday on which
+request is placed. For cancelling, it would be just the name of the student. See the sample
+output file to see style of printing.
+
+
+
+Sample Input File
+5
+1 rajat jain 193 1
+1 saumya gupta 256 2
+1 sambudha sen 442 5
+1 vivan shukla 108 3
+1 yash deka 214 4
+3
+1 sardar patel 220 6
+2 saumya gupta
+1 vidhu reddy 224 1
+1 zoya ahsan 127 4
+2 rajat jain
+4
+1 suraj lal 179 6
+8
+2 vivan Shukla
+2 sambudha sen
+4
+
+
+Sample Output
+REQUEST
+1 rajat jain (193) 2 saumya gupta (256) 3 vivan Shukla (108) 4 yash deka (214) 5 sambudha sen (442)
+
+CONFIRMED
+1 vidhu reddy (224) 3 vivan Shukla (108) 4 yash deka (214) 4 zoya ahsan (127) 5 sambudha sen (442)
+
+WAITLIST 
+6 sardar patel (220) 6 suraj lal (179)
+
+CONFIRMED
+1 vidhu reddy (224) 4 yash deka (214) 4 zoya ahsan (127) 6 sardar patel (220) 6 suraj lal (179)
